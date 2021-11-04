@@ -1,0 +1,197 @@
+
+
+.teachersPageBg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/staff-min.PNG");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 85vh;
+}
+
+
+
+.introDivTT{
+    background-color: #fff;
+    box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    position: relative;
+    top: -50px;
+    width: 700px;
+    border-radius: 5px;
+}
+
+
+.trainingProgBg{
+    background-image: url("../../images/indexBg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    height: 85vh;
+    position: relative;
+    top: -150px;
+}
+
+
+.circleBg{
+    background-image: url("../../images/circleBg.png");
+    background-size: cover;
+    background-position: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 45vh;
+    position: relative;
+    top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+    .teachersPageBg{
+        background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/staff-min.PNG");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 42vh;
+    }
+
+
+    
+.trainingProgBg{
+    background-image: url("../../images/indexBg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    height: 38vh;
+    position: relative;
+    top: -150px;
+}
+
+
+.circleBg{
+    background-image: url("../../images/circleBg.png");
+    background-size: cover;
+    background-position: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 31vh;
+    position: relative;
+    top: 50px;
+}
+
+    
+
+}
+
+
+
+
+
+
+
+    /* Small tablet to big tablet: from 768px to 1023px */
+    @media only screen and (max-width: 1023px) {
+     
+
+        .teachersPageBg{
+            background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/staff-min.PNG");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 53vh;
+            padding-top: 70px
+        }
+
+        
+.trainingProgBg{
+    background-image: url("../../images/indexBg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    height: 38vh;
+    position: relative;
+    top: -150px;
+}
+
+        
+
+
+    }
+
+
+
+
+
+
+
+
+
+    
+    /* Small phones to small tablets: from 481px to 767px */
+
+    @media only screen and (max-width: 767px) {
+
+
+.teachersPageBg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/staff-min.PNG");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 95vh;
+}
+
+
+
+.trainingProgBg{
+    background-image: url("../../images/indexBg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    height: 147vh;
+    position: relative;
+    top: -150px;
+}
+
+
+.vMarginMobile{
+    position: relative;
+    top: -180px
+}
+
+
+
+
+
+.trainingProgBg {
+    background-image: url("../../images/indexBg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 44px;
+    padding-bottom: 100px;
+    height: 167vh;
+    position: relative;
+    top: -27px;
+}
+
+    }

@@ -1,0 +1,41 @@
+.App .Mui-error {
+  padding: 0 10px;
+}
+.App .Mui-selected {
+  background: #fff !important;
+  color: #000 !important;
+}
+/* 
+.authButton {
+  border: 1px solid #73d56e;
+  border: 0;
+  padding: 20px;
+  border-color: #73d56e;
+  width: 80%;
+  margin: 10px;
+  background: #73d56e;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.authButton:hover {
+  border: 1px solid #73d56e;
+
+  background: white;
+  color: #73d56e;
+}
+.authButton:focus {
+  outline: none;
+} */
+
+.formForgotLink {
+  color: #73d56e;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+}
+.inputBoxLeftIcon {
+  padding: 5px 10px;
+  color: gray;
+}

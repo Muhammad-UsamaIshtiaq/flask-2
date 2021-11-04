@@ -1,0 +1,361 @@
+.App {
+    
+    font-family: 'Poppins', sans-serif;
+}
+
+.App .primaryButton {
+    background-color: rgb(115, 213, 110);
+    color: white;
+    font-size: 16px;
+    padding: 10px 30px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-right: 2px;
+    margin-left: 2px;
+    border-radius: 30px;
+   
+}
+
+
+
+.App .buttonRadius {
+    border-radius: 50px;
+}
+
+.App .primaryButtonOutLined {
+    border: solid 2px rgb(115, 213, 110);
+    color: rgb(115, 213, 110);
+    font-size: 16px;
+    padding: 5px 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.App .primaryButtonOutLined:hover {
+    background-color: rgba(115, 213, 110, 0.1);
+}
+
+.App .primaryButton:hover {
+    background-color: rgb(115, 213, 110);
+}
+
+.block {
+    padding: 5% 2%;
+}
+
+.App .primaryText {
+    font-weight: 700;
+    font-family: 'Poppins'; 
+    font-size: 45px;
+    letter-spacing: 1px;
+}
+
+.App .textPoppins {
+    font-family: 'Poppins';
+}
+
+.App .secondaryTest {
+     font-family: 'Poppins'; 
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.App .bodyText {
+    /* font-family: 'Montserrat'; */
+    font-size: 16px;
+    font-weight: 400;
+    color: #515151;
+}
+
+.App .greenText {
+    color: #73d56e !important;
+}
+
+.App .greenTextBackground {
+    background-color: #73d56e !important;
+    color: white;
+}
+
+.App .marginGapTop {
+    margin-top: 20px;
+}
+
+.App .marginGapBottom {
+    margin-bottom: 20px;
+}
+
+.App .inputBox {
+    background: #f0f3f6;
+    width: 100%;
+    margin: 5px 0;
+    border: solid 1px #cfd9e2;
+    display: inline-flex;
+}
+
+/***************** HeaderBox Start *****************/
+
+.App .headerBox {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 60%;
+    position: relative;
+}
+
+.headerBox .headerTitle {
+    font-weight: 700;
+    line-height: 60px;
+    font-family: 'Poppins';
+    font-size: 50px;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: rgb(0 0 0 / 15%) 2px 2px 4px;
+    margin-bottom: 20px;
+}
+
+.headerBox .headerDescription {
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.headerBox .headerBoxHolder {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0, 0.55);
+    display: flex;
+}
+.headerBox .headerBoxContainer {
+    /* position: absolute;
+    
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    width: 65%;
+    text-align: left;
+    margin-bottom: 15%;
+    margin: auto 6%;
+}
+
+.detailsBlock .headerBox .headerBoxContainer {
+    margin-bottom: 7%;
+}
+
+.detailsBlock .headerBox .headerTitle {
+    font-size: 45px;
+}
+
+.App .priceBadge {
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 4%;
+    background: #73d56e;
+    color: white;
+    padding-top: 8px;
+    border-radius: 0;
+}
+
+.App .priceBadgeShape {
+    position: absolute;
+    background: #73d56e;
+    top: 100%;
+    width: 100%;
+    height: 30px;
+    border-radius: 0px 0px 70% 70%;
+}
+
+.App .courseBlock {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.App .courseBlock:hover {
+    box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+
+.App .courseBlockLabel {
+    padding: 11px !important;
+    font-weight: 625;
+    padding-left: 10%;
+}
+
+.App .blogThumbnail .cover {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-clip: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-top: 100%;
+}
+
+.App .bannerTextLink {
+    padding-top: 65% !important;
+}
+
+.App .bannerTextLink .bannerTextLinkContainer {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* padding: 18% 14%; */
+}
+
+@media only screen and (max-width: 1030px) {
+    .headerBox .headerTitle {
+        font-weight: 700;
+        line-height: 40px;
+        font-size: 15px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (max-width: 992px) {
+    .headerBox .headerTitle {
+        font-weight: 700;
+        line-height: 40px;
+        font-size: 23px;
+    }
+    .headerBox .headerDescription {
+        font-weight: 300;
+        line-height: 19px;
+        font-size: 12px;
+    }
+    .headerBox .headerBoxContainer {
+        width: 70%;
+        padding-left: 6%;
+        padding-right: 10px;
+        margin-bottom: 10%;
+    }
+    .detailsBlock .headerBox .headerTitle {
+        font-size: 30px;
+    }
+    .detailsBlock .headerBox .headerBoxContainer {
+        margin-bottom: 7%;
+    }
+    .App .marginGapTop {
+        margin-top: 16px;
+    }
+    .App .marginGapBottom {
+        margin-bottom: 16px;
+    }
+    .App .primaryText {
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+    .App .secondaryTest {
+        letter-spacing: 1px;
+        font-size: 15px;
+    }
+    .block .bodyText {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .App .headerDescriptionSmall {
+        font-size: 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+    .headerBox .headerTitle {
+        font-weight: 600;
+        line-height: 26px;
+        font-size: 16px;
+    }
+    .headerBox .headerDescription {
+        font-weight: 200;
+        line-height: 15px;
+        font-size: 10px;
+    }
+    .headerBox .headerBoxContainer {
+        width: 75%;
+        padding-right: 10px;
+        margin-bottom: 5%;
+    }
+    .detailsBlock .headerBox .headerTitle {
+        font-size: 16px;
+    }
+    .detailsBlock .headerBox .headerBoxContainer {
+        margin-bottom: 3%;
+    }
+    .App .primaryButton {
+        font-size: 11px;
+        padding: 13px 30px;
+        font-weight: 400;
+    }
+    .App .primaryButtonOutLined {
+        font-size: 13px;
+        padding: 3px 16px;
+        font-weight: 400;
+    }
+    .block {
+        padding: 7% 3%;
+    }
+    .App .primaryText {
+        font-weight: 600;
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+    .App .headerDescriptionSmall {
+        font-size: 10px;
+    }
+    .App .marginGapTop {
+        margin-top: 14px;
+    }
+    .App .marginGapBottom {
+        margin-bottom: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .headerBox .headerBoxContainer {
+        margin-bottom: 0;
+    }
+    .headerBox .headerTitle {
+        font-weight: 600;
+        line-height: 17px;
+        font-size: 13px;
+    }
+    .headerBox .headerDescription {
+        font-weight: 200;
+        line-height: 12px;
+        font-size: 7px;
+    }
+    .courseBlock .headerBox .headerBoxContainer {
+        margin-bottom: 0;
+    }
+    .courseBlock .headerBox .headerTitle {
+        font-size: 13px;
+        line-height: 21px;
+        margin-bottom: 5%;
+    }
+    .block .headerDescriptionSmall {
+        font-size: 7px;
+    }
+    .detailsBlock .headerBox .headerTitle {
+        line-height: 25px;
+        margin-bottom: 2px;
+    }
+}

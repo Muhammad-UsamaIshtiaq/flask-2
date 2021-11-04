@@ -1,0 +1,50 @@
+.body{
+  overflow-x: hidden !important;
+}
+
+.defaultLink {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.basicImage{
+  width: 100%;
+  object-fit: contain;
+}
+
+.schoolDescriptionBlock{
+  margin-top: 30vh;
+  min-height: 120vh;
+}
+/* .schoolPageHeader{
+  padding-top: 35% !important;
+} */
+.searchSchool{
+  font-size: 14px !important;
+}
+.schoolSearchButton{
+  font-size: 13px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .schoolDescriptionBlock{
+    margin-top: 10vh;
+    /* min-height: 120vh; */
+  }
+  .schoolDescHighlightblocks{
+    margin-top: 0 !important;
+  }
+  .schoolIntroduction{
+    background-position: 56% -20% !important;
+  }
+  .schoolPageHeader{
+    padding-top: 85% !important;
+  }
+  .searchSchool{
+    font-size: 10px !important;
+  }
+  .schoolSearchButton{
+    font-size: 7px !important;
+  }
+  
+}

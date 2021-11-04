@@ -1,0 +1,42 @@
+.highlight {
+    position: relative;
+}
+
+.highlight .highlight-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.highlight .highlight-image {
+    font-size: 15px;
+    font-weight: 600;
+    width: 45%;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+
+.highlight .courseDescPaper {
+    padding: 5% 7%;
+    width: 65%;
+    margin: -20% auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .highlight .courseDescPaper {
+        margin: 5% auto;
+        width: 70%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+    .highlight .courseDescPaper {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+}

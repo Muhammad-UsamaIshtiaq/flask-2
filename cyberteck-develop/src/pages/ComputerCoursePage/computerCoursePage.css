@@ -1,0 +1,119 @@
+
+
+.ComputerCourseBg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/computer_course.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 90vh;
+}
+
+
+.introDivCC{
+    background-color: #fff;
+    box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    position: relative;
+    top: -50px;
+    width: 900px;
+    border-radius: 5px;
+}
+
+.CCDesignImg{
+    background-image: url("../../images/bg_features.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 150vh; 
+}
+
+
+.teachersBg{
+    background-image: url("../../images/teachers_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 120vh; 
+    padding-top: 200px;
+}
+
+.counterCCP{
+    width: 600px;
+}
+
+
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+  
+    /* Small tablet to big tablet: from 768px to 1023px */
+    @media only screen and (max-width: 1023px) {
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    /* Small phones to small tablets: from 481px to 767px */
+    @media only screen and (max-width: 767px) {
+.ComputerCourseBg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/computer_course.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 105vh;
+}
+
+
+.CCDesignImg{
+    background-image: url("../../images/bg_features.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 364vh; 
+}
+
+
+.teachersBg {
+    background-image: url("../../images/teachers_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 236vh;
+    padding-top: 5px;
+}
+
+
+
+    }
+
+
+
+
+
+

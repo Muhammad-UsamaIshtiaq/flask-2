@@ -1,0 +1,24 @@
+import os
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+#SQLALCHEMY_ENGINE_OPTIONS = {'pool_size' : 5, 'pool_recycle' : 25 }
+SQLALCHEMY_DATABASE_URI = 'sqlite:///../../cyberteck.db'
+DEBUG = True
+APP_NAME = 'user-auth-api'
+PROPAGATE_EXCEPTIONS = True
+JWT_ALGORITHM = 'RS256'
+JWT_PUBLIC_KEY = open('public.pem').read()
+UPLOAD_FOLDER = "/media"
+UPLOAD_THUMB_FOLDER = "/media/thumb"
+THUMBNAIL_SIZE = (500,500)
+
+AUTHORIZE_APILOGINID = "7ut4CH6e"
+AUTHORIZE_TRANSACTIONKEY = "8A97gX7TcEU259eR"
+# AUTHORIZE_APILOGINID = "2D9mSVWys3D"
+# AUTHORIZE_TRANSACTIONKEY = "882KVqq26fRjp959"
+
+STRIP_ACCESS_KEY = "sk_test_51J0SkDIJV61VXnlaohZdkatcAk1M0dMrvGtDycka4gWobKmhzrdLGy3QZsQpPqnjXOb35hTlkoqeDgjNAr2AL5yx00gmeCevv9"
+PAYPAL_CLIENT_KEY = "Af_r_jKXxeqlZQV-OzO96s_d8Af8iwjp8kXv9-jRgzhOKTWEF9xuSvf5wxBNGYVwbEO_qLW6LAcZtrvV"
+PAYPAL_SECRET_KEY = "EAWArHkhwmoArLs4v74bOFoig2IJ0Ef0nkjGKNVxNavIcGI84EWT-TWH3tZG5YYgKUhAds_bo68oCVqL"
+ENVIRONMENT = "TEST"
+
+# (.env) dot file to read jwt public and private key.

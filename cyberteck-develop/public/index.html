@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <!--Google and FB analytics-->
+  <meta name="google-site-verification" content="Z4fMD7nchixQXSzydzgiT9GP2Nnoz-ilDsTQLjnD2b0" />
+<meta name="msvalidate.01" content="3B557CB5FEAF2D0F4AF96DB514DC5E4A" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-210088384-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-210088384-1');
+</script>
+
+
+
+
+   <!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit-icons.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
+
+
+
+
+
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700%2C300%7CRoboto:400%2C500" rel="stylesheet"
+    property="stylesheet" media="all" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <title>Cybertech Academy</title>
+  <style>
+    .slick-slider {
+      width: 90%;
+      padding: 2% 3%;
+      margin: auto;
+    }
+
+    .App .slick-slide {
+      text-align: center;
+    }
+
+    /* the parent */
+    .App .slick-list {
+      margin: 0 -10px;
+    }
+
+    .slick-prev:before {
+      content: none !important
+    }
+
+    .slick-next:before {
+      content: none !important
+    }
+
+    .App .slick-prev {
+      left: -35px;
+      position: absolute;
+      display: inline-flex !important;
+      border: solid 2px gray;
+      border-radius: 0;
+    }
+
+    .App .slick-next {
+      right: -35px;
+      position: absolute;
+      display: inline-flex !important;
+      border: solid 2px gray;
+      border-radius: 0;
+    }
+
+    .App .slick-prev:hover,
+    .App .slick-prev:focus,
+    .App .slick-next:hover,
+    .App .slick-next:focus {
+      color: black;
+      border-color: black;
+    }
+
+    #map {
+      height: 500px;
+      /* The height is 400 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script>
+    'use strict';
+
+    /**
+     * Defines an instance of the Locator+ solution, to be instantiated
+     * when the Maps library is loaded.
+     */
+    function LocatorPlus(configuration) {
+      const locator = this;
+
+      locator.locations = configuration.locations || [];
+      locator.capabilities = configuration.capabilities || {};
+
+      const mapEl = document.getElementById('map');
+
+      locator.selectedLocationIdx = null;
+      locator.userCountry = null;
+
+      // Initialize the map -------------------------------------------------------
+      const mapOptions = configuration.mapOptions;
+      locator.map = new google.maps.Map(mapEl, {
+        fullscreenControl: false,
+        zoomControl: mapOptions.zoomControl,
+        zoom: 10,
+        center: { lat: 39.0, lng: -77.5 }
+      });
+      // Create a marker for each location.
+      const markers = locator.locations.map(function (location, index) {
+        const marker = new google.maps.Marker({
+          position: location.coords,
+          map: locator.map,
+          title: location.title,
+        });
+        //marker.addListener('click', function() {});
+        return marker;
+      });
+
+      // Fit map to marker bounds.
+      locator.updateBounds = function () {
+        const bounds = new google.maps.LatLngBounds();
+        for (let i = 0; i < markers.length; i++) {
+          bounds.extend(markers[i].getPosition());
+        }
+        locator.map.fitBounds(bounds);
+      };
+      //locator.updateBounds();
+
+    }
+  </script>
+  <script>
+    const CONFIGURATION = {
+      "capabilities": {},
+      "locations": [
+        { "title": "CyberTeck Academy Inc.", "address1": "43300 Southern Walk Plaza Ste 221", "address2": "116, Broadlands, VA 20148, USA", "coords": { "lat": 39.00823026960798, "lng": -77.5031931723526 }, "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw" }
+        ,
+        {
+          "address1": "2400 Russell Rd, Alexandria, VA 22301",
+          "coords": {
+            "lat": 38.82793808,
+            "lng": -77.06587219
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ALEXANDRIA COUNTRY DAY SCHOOL"
+        },
+        {
+          "address1": "5950 8th Rd N, Arlington, VA 22205",
+          "coords": {
+            "lat": 38.8729608,
+            "lng": -77.1361022
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ASHLAWN ELEMENTARY"
+        },
+        {
+          "address1": "6700 Seneca Dr, Columbia, MD 21046",
+          "coords": {
+            "lat": 39.186331,
+            "lng": -76.862597
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ATHOLTON"
+        },
+        {
+          "address1": "821 Battlefield Pkwy NE, Leesburg, VA 20176",
+          "coords": {
+            "lat": 39.1232347,
+            "lng": -77.5348795
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BALLS BLUFF ELEMENTARY"
+        },
+        {
+          "address1": "6520 Dalroy Ln, Bethesda, MD 20817",
+          "coords": {
+            "lat": 38.9742762,
+            "lng": -77.1381713
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BANNACKBURN ELEMENTARY"
+        },
+        {
+          "address1": "8125 Old Stockbridge Dr, Ellicott City, MD 21043",
+          "coords": {
+            "lat": 39.204051,
+            "lng": -76.792541
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BELLOWS SPRING"
+        },
+        {
+          "address1": "7600 Arlington Rd, Bethesda, MD 2081",
+          "coords": {
+            "lat": 38.9866081,
+            "lng": -77.0998959
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BETHESDA"
+        },
+        {
+          "address1": "8501 Postoak Rd, Potomac, MD 20854",
+          "coords": {
+            "lat": 39.0521665,
+            "lng": -77.1760935
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BEVERLY FARMS"
+        },
+        {
+          "address1": "8701 Hartsdale Ave, Bethesda, MD 20817",
+          "coords": {
+            "lat": 39.0000846,
+            "lng": -77.1172526
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BRADLEY HILLS"
+        },
+        {
+          "address1": "301 North Carolina Ave SE, Washington, DC 20003",
+          "coords": {
+            "lat": 38.8848006,
+            "lng": -77.0014599
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BRENT"
+        },
+        {
+          "address1": "5450 Blue Heron Ln, Columbia, MD 21044",
+          "coords": {
+            "lat": 39.2217335,
+            "lng": -76.8668161
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BRYANT WOODS"
+        },
+        {
+          "address1": "850 Hungerford Drive, Rockville, Maryland 20850",
+          "coords": {
+            "lat": 39.094784,
+            "lng": -77.1582238
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BURNING TREE"
+        },
+        {
+          "address1": "14601 Carrs Mill Rd, Glenwood, MD 21738",
+          "coords": {
+            "lat": 39.302912,
+            "lng": -77.023391
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "BUSHY PARK"
+        },
+        {
+          "address1": "4910 Willet Dr, Annandale, VA 22003",
+          "coords": {
+            "lat": 38.8197758,
+            "lng": -77.2495699
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CANTERBURY WOODS ELEMENTARY"
+        },
+        {
+          "address1": "7401 Persimmon Tree Ln, Bethesda, MD 20817",
+          "coords": {
+            "lat": 38.9834985,
+            "lng": -77.1720265
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CARDEROCK SPRINGS ELEMENTARY"
+        },
+        {
+          "address1": "1115 Martha Custis Dr, Alexandria, VA 22302",
+          "coords": {
+            "lat": 38.8334493,
+            "lng": -77.0825003
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CHARLES BARRET ELEMENTARY"
+        },
+        {
+          "address1": "1115 Martha Custis Dr, Alexandria, VA 22302",
+          "coords": {
+            "lat": 38.8334493,
+            "lng": -77.0825003
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CHARLES BARRETT RECREATION CENTER"
+        },
+        {
+          "address1": "7100 Churchill Rd, McLean, VA 22101",
+          "coords": {
+            "lat": 38.946454,
+            "lng": -77.1895516
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CHURCHILL"
+        },
+        {
+          "address1": "1825 8th St NW, Washington, DC 20001",
+          "coords": {
+            "lat": 38.8997051,
+            "lng": -77.0229479
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Cleveland Park"
+        },
+        {
+          "address1": "1700 Yale Pl, Rockville, MD 20850",
+          "coords": {
+            "lat": 25.0364703,
+            "lng": -77.3045565
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "COLLEGE GARDENS"
+        },
+        {
+          "address1": "23171 Minerva Dr, Ashburn, VA 20148",
+          "coords": {
+            "lat": 38.9719662,
+            "lng": -77.5279283
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CREIGHTONS CORNER"
+        },
+        {
+          "address1": "2791 Fox Mill Rd, Herndon, VA 20171",
+          "coords": {
+            "lat": 38.9150043,
+            "lng": -77.3623733
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "CROSSFIELD ELEMENTARY"
+        },
+        {
+          "address1": "20301 Brandermill Dr, Germantown, MD 20876",
+          "coords": {
+            "lat": 39.1894492,
+            "lng": -77.2320632
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "DALY ELEMENTARY"
+        },
+        {
+          "address1": "4691 Ten Oaks Rd, Dayton, MD 21036",
+          "coords": {
+            "lat": 39.2407774,
+            "lng": -76.9836364
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Dayton Oaks"
+        },
+        {
+          "address1": "4 Marquis Dr, Gaithersburg, MD 20878",
+          "coords": {
+            "lat": 39.1356598,
+            "lng": -77.239063
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "DIAMOND"
+        },
+        {
+          "address1": "5241 36th St N, Arlington, VA 22207",
+          "coords": {
+            "lat": 38.9079235,
+            "lng": -77.1467432
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "DISCOVERY - ARLINGTON"
+        },
+        {
+          "address1": "44045 Bruceton Mills Cir, Ashburn, VA 20147",
+          "coords": {
+            "lat": 39.036062,
+            "lng": -77.4789244
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "DOMINION TRAIL"
+        },
+        {
+          "address1": "7075 Montgomery Rd, Elkridge, MD 21075",
+          "coords": {
+            "lat": 39.2108657,
+            "lng": -76.7310781
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ELKRIDGE"
+        },
+        {
+          "address1": "9010 Frank Tippett Rd, Upper Marlboro, MD 20772",
+          "coords": {
+            "lat": 38.764479,
+            "lng": -76.830685
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "EXCELLENCE CHRISTIAN SCHOOL"
+        },
+        {
+          "address1": "223 Little Falls St, Falls Church, VA 22046",
+          "coords": {
+            "lat": 38.8862905,
+            "lng": -77.1717876
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "FALLS CHURCH CMMUNITY CENTER"
+        },
+        {
+          "address1": "1501 Becontree Ln, Reston, VA 20190",
+          "coords": {
+            "lat": 38.968744,
+            "lng": -77.3289151
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "FOREST EDGE"
+        },
+        {
+          "address1": "800 N King St, Leesburg, VA 20176",
+          "coords": {
+            "lat": 39.1310932,
+            "lng": -77.5495246
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "FRANCIS HAZEL REID"
+        },
+        {
+          "address1": "9999 Winter Sun Rd, Laurel, MD 20723",
+          "coords": {
+            "lat": 39.145257,
+            "lng": -76.8596377
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "GORMAN CROSSING"
+        },
+        {
+          "address1": "701 Walker Rd, Great Falls, VA 22066",
+          "coords": {
+            "lat": 39.0014655,
+            "lng": -77.2921631
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "GREAT FALLS ELEMENTARY"
+        },
+        {
+          "address1": "38174 W Colonial Hwy, Hamilton, VA 20158",
+          "coords": {
+            "lat": 39.135774,
+            "lng": -77.668098
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HARMONY MIDDLE"
+        },
+        {
+          "address1": "3950 37th St NW, Washington, DC 20008",
+          "coords": {
+            "lat": 38.940685,
+            "lng": -77.0718529
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HEARST"
+        },
+        {
+          "address1": "921 Pennsylvania Ave SE, Washington, DC 20003",
+          "coords": {
+            "lat": 38.8830167,
+            "lng": -76.9931347
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HILL CENTER"
+        },
+        {
+          "address1": "130 S Madison St, Middleburg, VA 20117",
+          "coords": {
+            "lat": 38.9654383,
+            "lng": -77.7349506
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HILL SCHOOL"
+        },
+        {
+          "address1": "43000 Ellzey Dr, Ashburn, VA 20148",
+          "coords": {
+            "lat": 39.0208601,
+            "lng": -77.5139516
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HILLSIDE ELEMENTARY"
+        },
+        {
+          "address1": "7107 Sydnestricker Rd, Springfield, VA 22152",
+          "coords": {
+            "lat": 38.762578,
+            "lng": -77.244957
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "HUNT VALLEY"
+        },
+        {
+          "address1": "60 Ida Lee Dr NW, Leesburg, VA 20176",
+          "coords": {
+            "lat": 39.1244035,
+            "lng": -77.5661799
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "IDA LEE"
+        },
+        {
+          "address1": "6001 Tamar Dr, Columbia, MD 21045",
+          "coords": {
+            "lat": 39.206386,
+            "lng": -76.826908
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "JEFFERS HILL"
+        },
+        {
+          "address1": "1717 Melbourne Dr, McLean, VA 22101",
+          "coords": {
+            "lat": 38.9214599,
+            "lng": -77.1755765
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "KENT GARDENS"
+        },
+        {
+          "address1": "5701 Broad Branch Rd NW, Washington, DC 20015",
+          "coords": {
+            "lat": 38.966437,
+            "lng": -77.0679283
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LAFAYETTE ELEMENTARY"
+        },
+        {
+          "address1": "7137 Beulah St, Alexandria, VA 22315",
+          "coords": {
+            "lat": 38.7609841,
+            "lng": -77.1574097
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LANE ELEMENTARY"
+        },
+        {
+          "address1": "25491 Riding Center Dr, Chantilly, VA 20152",
+          "coords": {
+            "lat": 38.907186,
+            "lng": -77.538876
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LIBERTY"
+        },
+        {
+          "address1": "15901 Frederick Rd, Woodbine, MD 21797",
+          "coords": {
+            "lat": 39.335698,
+            "lng": -77.069125
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LISBON"
+        },
+        {
+          "address1": "5470 Hesperus Dr, Columbia, MD 21044",
+          "coords": {
+            "lat": 39.225503,
+            "lng": -76.8824837
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LONGFELLOW"
+        },
+        {
+          "address1": "320 W School St, Purcellville, VA 20132",
+          "coords": {
+            "lat": 39.1326289,
+            "lng": -77.7194585
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LOUDOUN VALLEY COMMUNITY CENTER"
+        },
+        {
+          "address1": "14550 James Monroe Hwy, Leesburg, VA 20176",
+          "coords": {
+            "lat": 39.2133951,
+            "lng": -77.5341424
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "LUCKETTS"
+        },
+        {
+          "address1": "101 Janneys Ln, Alexandria, VA 22302",
+          "coords": {
+            "lat": 38.8173643,
+            "lng": -77.0892343
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MACARTHUR"
+        },
+        {
+          "address1": "11575 Frederick Rd, Ellicott City, MD 21042",
+          "coords": {
+            "lat": 39.2728165,
+            "lng": -76.8317007
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Manor Woods"
+        },
+        {
+          "address1": "3000 Cathedral Ave NW, Washington, DC 20008",
+          "coords": {
+            "lat": 38.9282028,
+            "lng": -77.060726
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MARET"
+        },
+        {
+          "address1": "11701 Duley Station Rd, Upper Marlboro, MD 20772",
+          "coords": {
+            "lat": 38.7483636,
+            "lng": -76.8056952
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MATTAPONI ES"
+        },
+        {
+          "address1": "1250 Constitution Ave NE, Washington, DC 20002",
+          "coords": {
+            "lat": 38.8925467,
+            "lng": -76.9886765
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MAURY"
+        },
+        {
+          "address1": "1030 N McKinley Rd, Arlington, VA 22205",
+          "coords": {
+            "lat": 38.8786097,
+            "lng": -77.1467754
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MCKINLEY ELEMENTARY"
+        },
+        {
+          "address1": "42149 Greenstone Dr, Aldie, VA 20105",
+          "coords": {
+            "lat": 38.927589,
+            "lng": -77.548336
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MERCER MIDDLE SCHOOL"
+        },
+        {
+          "address1": "22325 Mooreview Pkwy, Ashburn, VA 20148",
+          "coords": {
+            "lat": 38.77089,
+            "lng": -77.614892
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MOOREFIELD ELEMENTARY"
+        },
+        {
+          "address1": "2601 Commonwealth Ave, Alexandria, VA 22301",
+          "coords": {
+            "lat": 38.8283291,
+            "lng": -77.0606129
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "MOUNT VERNON COMMUNITY SCHOOL"
+        },
+        {
+          "address1": "1108 Jefferson St, Alexandria, VA 22314",
+          "coords": {
+            "lat": 38.7970174,
+            "lng": -77.0527447
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "NANNIE J LEE RECREATION CENTER"
+        },
+        {
+          "address1": "93 W Main St, New Market, MD 21774",
+          "coords": {
+            "lat": 39.3840133,
+            "lng": -77.275384
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "NEW MARKET"
+        },
+        {
+          "address1": "8935 Bradmoor Dr, Bethesda, MD 20817",
+          "coords": {
+            "lat": 39.0044094,
+            "lng": -77.1257722
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "NORTH BETHESDA"
+        },
+        {
+          "address1": "9125 Northfield Rd, Ellicott City, MD 21042",
+          "coords": {
+            "lat": 39.2558203,
+            "lng": -76.8303951
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "NORTHFIELD"
+        },
+        {
+          "address1": "5900 Little Falls Rd, Arlington, VA 22207",
+          "coords": {
+            "lat": 38.900465,
+            "lng": -77.1511061
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "NOTTINGHAM"
+        },
+        {
+          "address1": "2720 Plyers Mill Rd, Silver Spring, MD 20902",
+          "coords": {
+            "lat": 39.0288495,
+            "lng": -77.0578876
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "OAKLAND TERRACE"
+        },
+        {
+          "address1": "3000 Chain Bridge Rd, Oakton, VA 22124",
+          "coords": {
+            "lat": 38.879243,
+            "lng": -77.303883
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Oakton"
+        },
+        {
+          "address1": "9524 Old Creek Dr, Fairfax, VA 22032",
+          "coords": {
+            "lat": 38.831043,
+            "lng": -77.2761095
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "OLDE CREEK"
+        },
+        {
+          "address1": "2801 Calvert St NW, Washington, DC 20008",
+          "coords": {
+            "lat": 38.9235971,
+            "lng": -77.0572085
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "OYSTER"
+        },
+        {
+          "address1": "36592 Jeb Stuart Rd, Philomont, VA 20131",
+          "coords": {
+            "lat": 39.0568596,
+            "lng": -77.7390069
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "PHILOMONT COMMUNITY CENTER"
+        },
+        {
+          "address1": "6600 S Trotter Rd, Clarksville, MD 21029",
+          "coords": {
+            "lat": 39.189613,
+            "lng": -76.92555
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "POINTERS RUN"
+        },
+        {
+          "address1": "5000 Polk Ave, Alexandria, VA 22304",
+          "coords": {
+            "lat": 38.822049,
+            "lng": -77.115369
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "POLK ELEMENTARY"
+        },
+        {
+          "address1": "11315 Falls Rd, Potomac, MD 20854",
+          "coords": {
+            "lat": 39.0410476,
+            "lng": -77.1915583
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "POTOMAC COMMUNITY CENTER"
+        },
+        {
+          "address1": "Potomac Elementary School, 10311 River Road, Potomac Manors, Potomac, MD, United States of America",
+          "coords": {
+            "lat": 39.0215902,
+            "lng": -77.2128505
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "POTOMAC ELEMENTARY"
+        },
+        {
+          "address1": "13618 McLearen Rd, Herndon, VA 20171",
+          "coords": {
+            "lat": 38.924636,
+            "lng": -77.417893
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "PRAGATHI VIDYALAYA- Rachel Carson"
+        },
+        {
+          "address1": "23415 Evergreen Ridge Dr, Ashburn, VA 20148",
+          "coords": {
+            "lat": 38.978839,
+            "lng": -77.512448
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "PRAGATHI VIDYALAYA- Stone Hill"
+        },
+        {
+          "address1": "6311 Wilson Ln, Bethesda, MD 20817",
+          "coords": {
+            "lat": 38.9895082,
+            "lng": -77.1315841
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "PYLE MIDDLE"
+        },
+        {
+          "address1": "Ritchie Park Elementary School, 1514 Dunster Road, Falls Orchard, Rockville, MD 20854, United States of America",
+          "coords": {
+            "lat": 39.0630686,
+            "lng": -77.1743896
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "RITCHIE PARK"
+        },
+        {
+          "address1": "8330 Grubb Rd, Chevy Chase, MD 20815",
+          "coords": {
+            "lat": 38.9922877,
+            "lng": -77.0510035
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ROCK CREEK FOREST"
+        },
+        {
+          "address1": "6145 Montgomery Rd, Elkridge, MD 21075",
+          "coords": {
+            "lat": 39.21495,
+            "lng": -76.7686151
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ROCKBURN"
+        },
+        {
+          "address1": "Samuel W Tucker Elementary School, 435 Ferdinand Day Drive, Cameron, Alexandria, VA 22304, United States of America",
+          "coords": {
+            "lat": 38.8054545,
+            "lng": -77.126402
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "SAMUEL W TUCKER ELEMENTARY"
+        },
+        {
+          "address1": "43345 Coton Commons Dr, Leesburg, VA 20176",
+          "coords": {
+            "lat": 39.0840704,
+            "lng": -77.501315
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "SELDENS LANDING"
+        },
+        {
+          "address1": "3333 Sleepy Hollow Rd, Falls Church, VA 22044",
+          "coords": {
+            "lat": 38.855979,
+            "lng": -77.169285
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "SLEEPY HOLLOW"
+        },
+        {
+          "address1": "Saint Ann Elementary School, 980 North Frederick Street, Larchmont, Arlington, VA 22205, United States of America",
+          "coords": {
+            "lat": 38.88067,
+            "lng": -77.12667
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ST ANN SCHOOL"
+        },
+        {
+          "address1": "422 3rd St SE, Washington, DC 20003",
+          "coords": {
+            "lat": 38.8835369,
+            "lng": -77.0015328
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "ST PETERS"
+        },
+        {
+          "address1": "STEUART W. WELLER ELEMENTARY SCHOOL, 20700 Marblehead Drive, Potomac Green, Ashburn, VA 20147, United States of America",
+          "coords": {
+            "lat": 39.0423551,
+            "lng": -77.4542754
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "STEUART WELLER"
+        },
+        {
+          "address1": "14323 Stonebridge View Dr, North Potomac, MD 20878",
+          "coords": {
+            "lat": 39.0916201,
+            "lng": -77.214271
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "STONE MILL"
+        },
+        {
+          "address1": "2600 N Stuart St, Arlington, VA 22207",
+          "coords": {
+            "lat": 38.9065254,
+            "lng": -77.1134751
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "TAYLOR ELEMENTARY"
+        },
+        {
+          "address1": "4749 Whitehaven Pkwy NW, Washington, DC 20007",
+          "coords": {
+            "lat": 38.9162499,
+            "lng": -77.0935459
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "THE LAB SCHOOL OF WASHINGTON"
+        },
+        {
+          "address1": "45965 Nokes Blvd # 120, Sterling, VA 20166",
+          "coords": {
+            "lat": 39.023129,
+            "lng": -77.410848
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "THE NEWTON SCHOOL"
+        },
+        {
+          "address1": "1255 Patriot Pl, Forest, VA 24551",
+          "coords": {
+            "lat": 37.3577044,
+            "lng": -79.2867324
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "THOMAS JEFFERSON"
+        },
+        {
+          "address1": "9357 Mellenbrook Rd, Columbia, MD 21045",
+          "coords": {
+            "lat": 39.2295312,
+            "lng": -76.8356408
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "THUNDER HILL"
+        },
+        {
+          "address1": "2737 West St, Falls Church, VA 22046",
+          "coords": {
+            "lat": 38.880436,
+            "lng": -77.198692
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Timber Lane"
+        },
+        {
+          "address1": "13801 Dufief Mill Rd, Gaithersburg, MD 20878",
+          "coords": {
+            "lat": 39.1017334,
+            "lng": -77.2241504
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "TRAVILAH"
+        },
+        {
+          "address1": "14747 Arizona Ave, Woodbridge, VA 22191",
+          "coords": {
+            "lat": 38.631763,
+            "lng": -77.2629417
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "Victory Christian School"
+        },
+        {
+          "address1": "120 Cherry St SE, Vienna, VA 22180",
+          "coords": {
+            "lat": 38.9004542,
+            "lng": -77.2597037
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "VIENNA REC CENTER"
+        },
+        {
+          "address1": "19790 Ashburn Rd, Ashburn, VA 20147",
+          "coords": {
+            "lat": 39.0668884,
+            "lng": -77.4767274
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "VIRGINIA ACADEMY"
+        },
+        {
+          "address1": "420 12th Street SE Washington, DC 20003",
+          "coords": {
+            "lat": 38.8834363,
+            "lng": -76.9899368
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WATKINS"
+        },
+        {
+          "address1": "10220 Wetherburn Road Ellicott City, MD 21042",
+          "coords": {
+            "lat": 39.303267,
+            "lng": -76.868259
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WAVERLY"
+        },
+        {
+          "address1": "7500 Magarity Rd, Falls Church, VA 22043",
+          "coords": {
+            "lat": 38.919038,
+            "lng": -77.203929
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WESTGATE"
+        },
+        {
+          "address1": "5511 Massachusetts Ave, Bethesda, MD 20816",
+          "coords": {
+            "lat": 38.9603245,
+            "lng": -77.1088727
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WESTLAND MIDDLE"
+        },
+        {
+          "address1": "14615 Bauer Dr, Rockville, MD 20853",
+          "coords": {
+            "lat": 39.092571,
+            "lng": -77.108893
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WOOD MIDDLE"
+        },
+        {
+          "address1": "14615 Bauer Dr, Rockville, MD 20853",
+          "coords": {
+            "lat": 38.170356,
+            "lng": -76.421312
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WOODFIELD"
+        },
+        {
+          "address1": "2101 Luzerne Ave, Silver Spring, MD 20910",
+          "coords": {
+            "lat": 39.0063243,
+            "lng": -77.0475454
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WOODLIN ELEMENTARY"
+        },
+        {
+          "address1": "11509 Waples Mill Rd, Oakton, VA 22124",
+          "coords": {
+            "lat": 38.876752,
+            "lng": -77.345874
+          },
+          "placeId": "ChIJ__8_EhA_tokRzSkZ-CMNjCw",
+          "title": "WAPLES MILL FALL"
+        }
+      ],
+      "mapOptions": {},
+      "mapsApiKey": "AIzaSyBJ80ZGZsRmq5y5xJaJH8XdJh0mc7rZviQ"
+    };
+
+    function initMap() {
+      initInterval = setInterval(function () {
+        if (document.getElementById('map')){
+          new LocatorPlus(CONFIGURATION);
+          clearInterval(initInterval)
+        }
+      }, 5000);
+      //setTimeout(function () { clearInterval(initInterval) }, 100000)
+    }
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ80ZGZsRmq5y5xJaJH8XdJh0mc7rZviQ&callback=initMap&&libraries=places"
+    async></script>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AV3D7Z_DU9tmmkT_kh0giWRwag0gcUZotElFhfcCQuiAERBQz_YXEyNabNsKdP3mZNJsP23k1GIRoDhC&currency=USD&disable-funding=credit,card"></script>
+
+</body>
+
+</html>

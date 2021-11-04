@@ -1,0 +1,140 @@
+.dashboard .MuiMenu-list{
+    background-color: black !important;
+    color: white !important;
+}
+
+
+.headerBar {
+    opacity: rgba(0, 0, 0, 0.84)!important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding-top: 0px;
+}
+
+.App .navMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App .logoContainer {
+    padding: 1% 0px 0px 5%;
+    text-align: left;
+}
+
+.navMenu .navLink {
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-shadow: rgb(0 0 0 / 15%) 2px 2px 4px;
+    height: 100%;
+}
+
+.navMenu .navLink:hover {
+    color: #f5b417!important;
+    background-color: transparent;
+}
+
+.navMenu .navLink:hover * {
+    color: #f5b417!important;
+}
+
+.footerBlock {
+    background: black;
+    color: #bababa;
+    padding: 5%;
+}
+
+.footerBlock .footerBorderBottom {
+    border-bottom: solid #393939;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+}
+
+.footerBlock .subscribeInputBox {
+    border: solid #393939;
+    border-radius: 5px;
+    outline: 0;
+    color: white;
+}
+
+.footerBlock .subscribeLabel {
+    font-size: 32px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+
+.footerBlock .subscribeInputBox:focus {
+    outline: 0;
+}
+
+.footerBlock .socialIcon {
+    color: white;
+}
+.footerBlock .socialIcon:hover {
+    color: #73d56e;
+}
+
+
+.footerBlock .footerLinkContainer {
+    list-style: none;
+    padding: 0;
+}
+
+.footerBlock .footerTitle {
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+
+.footerBlock .footerLinkContainer .footerLink {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: white;
+    display: flex;
+    line-height: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footerBlock .footerLinkContainer .footerLink:hover {
+    color: #73d56e;
+}
+
+.footerBlock .footerLinkContainer .icon {
+    color: #126d77;
+}
+
+/* .footerBlock .footerLinkContainer .footerLink:before {
+    color: #126d77;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+    display: block;
+    line-height: 23px;
+    margin-right: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+@media only screen and (max-width: 992px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+    .navMenu .navLink {
+        padding: 5px;
+    }
+}

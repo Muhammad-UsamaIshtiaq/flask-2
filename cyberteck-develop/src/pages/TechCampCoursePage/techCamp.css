@@ -1,0 +1,374 @@
+
+.iconParagraphSmallTeck{
+    font-size: 14px;
+    margin-top: -4px;
+   
+}
+
+.techCampHeader{
+
+      
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/techCampBg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 95vh;
+
+}
+
+
+.introDiv{
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-top: -60px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    
+    width:800px
+}
+
+.leftTeckBg{
+
+    background-image:url("../../images/leftBg.png");
+    background-size: cover;
+    padding: 20px;
+    
+    height: 594px;
+
+}
+
+.rightDivTeck{
+    
+    
+    border-radius: 10px;
+    
+    padding: 60px;
+    width:650px;
+    position: relative;
+    left:-100px;
+}
+
+.paddingRight{
+    padding-right: 70px;
+}
+
+
+.studentBg{
+        
+    background-image: url("../../images/student_bg.jpg");
+    background-size: cover;
+    padding: 20px;
+    
+    
+    height: 573px;
+}
+
+.techCampGrayBg{
+    background-color: #faf4ff;
+    height: auto;
+}
+
+.negativeDiv{
+    position: relative;
+    top: -30px;
+}
+
+.VirTechBg{
+    background-color: #73d56e;
+    height: 220px;
+    width: 206px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.virtualSmallBg{
+
+    background-color: #FA9917;
+    height: 220px;
+    width: 206px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+
+.atLocationBg{
+    background-color: #0f6a76;
+    height: 220px;
+    width: 206px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.spacingDiv{
+    height: 120px;
+  }
+
+  .accBgTechCamp{
+           
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/ty.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 140vh;
+    }
+
+.counterNumber{
+    font-size: 70px;
+    font-weight: 800;
+    
+}
+
+.counterDivTechCamp{
+    width:200px;
+   
+}
+
+
+
+
+
+
+
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+    .techCampHeader {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/techCampBg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 52vh;
+    }
+
+    .studentBg {
+        background-image: url("../../images/student_bg.jpg");
+        background-size: cover;
+        padding: 20px;
+        height: 517px;
+    }
+
+
+
+    .rightDivTeck {
+        border-radius: 10px;
+        padding: 60px;
+        width: 739px;
+        position: relative;
+        left: 73px;
+    }
+    .leftTeckBg {
+        background-image: url("../../images/leftBg.png");
+        background-size: cover;
+        padding: 20px;
+        height: 853px;
+    }
+
+    .accBgTechCamp{
+           
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/ty.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 71vh;
+        }
+
+        .counterDivTechCamp {
+            width: 163px;
+        }
+
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+    
+    /* Small tablet to big tablet: from 768px to 1023px */
+    @media only screen and (max-width: 1023px) {
+
+        .techCampHeader {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/techCampBg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 95vh;
+        }
+    
+
+        .rightDivTeck {
+            border-radius: 10px;
+            padding: 60px;
+            width: 650px;
+            position: relative;
+            left: 0px;
+        }
+
+        .leftTeckBg {
+            background-image: url("../../images/leftBg.png");
+            background-size: cover;
+            padding: 20px;
+            height: 622px;
+        }
+
+        .studentBg {
+            background-image: url("../../images/student_bg.jpg");
+            background-size: cover;
+            padding: 20px;
+            height: 582px;
+        }
+
+
+
+
+        .accBgTechCamp{
+           
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/ty.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 106vh;
+            }
+
+
+            .counterDivTechCamp {
+                width: 163px;
+            }
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+   /* Small phones to small tablets: from 481px to 767px */
+
+   @media only screen and (max-width: 767px) {
+
+    .rightDivTeck{
+    
+    
+        border-radius: 10px;
+        
+        padding: 20px;
+        width:340px;
+        position: relative;
+        left:0px;
+    }
+
+    .iconParagraphSmallTeck{
+        font-size: 14px;
+        margin-top: -4px;
+        padding-right: 20px;
+        padding-left: 1px;
+    }
+    
+    .introDiv {
+        background-color: #fff;
+        box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+        margin-top: -33px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+        padding: 25px;
+        width: 100%;
+    }
+
+
+    .atLocationBg {
+        background-color: #0f6a76;
+        height: 197px;
+        width: 160px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .VirTechBg {
+        background-color: #73d56e;
+        height: 197px;
+        width: 160px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .accBgTechCamp {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/ty.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 168vh;
+    }
+
+
+    .studentBg {
+        background-image: url("../../images/student_bgsmall.jpg");
+        background-size: cover;
+        padding: 20px;
+        height: 573px;
+       
+    }
+
+    .techCampGrayBg {
+        background-color: #faf4ff;
+        height: auto;
+        padding-bottom: 91px;
+    }
+
+
+
+    .counterDivTechCamp{
+        width:253px;
+       
+    }
+    
+
+
+
+
+
+
+
+
+
+
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

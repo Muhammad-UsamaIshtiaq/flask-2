@@ -1,0 +1,39 @@
+.blogItem{
+    min-height: 15rem;
+}
+.blogCategories{
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 400;
+}
+.blogCategories li{
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.blogCategories li::marker {
+    content: "▸";
+    color: #73D56E;
+}
+
+@media only screen and (max-width: 600px) {
+    .blogItem{
+        min-height: 35rem;
+    }
+    .blogDetailContainerBox{
+        padding: 10px;
+    }   
+}
+.error-message{
+    text-align: left;
+    color: red;
+}
+
+.blogDetails{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.blogDetails img{
+    width: 100% !important;
+    object-fit: contain;
+}

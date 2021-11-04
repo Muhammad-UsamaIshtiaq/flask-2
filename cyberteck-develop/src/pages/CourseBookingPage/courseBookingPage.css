@@ -1,0 +1,17 @@
+.App .timeslot-selector{
+    margin-left: 0px !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.App .timeslot-selector.not-available{
+    background-color: #ffb3b3 !important;
+    color: inherit !important;
+}
+.App .timeslot-selector.available{
+    background-color: #b3ffcc !important;
+    color: inherit !important;
+}
+.App .timeslot-selector.Mui-selected{
+    background-color: #b55d40 !important;
+    color: white !important;
+}

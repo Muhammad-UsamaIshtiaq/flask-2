@@ -1,0 +1,168 @@
+.carousel-root{
+    width: 100%;;
+}
+
+
+.headerBg{
+   
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/headerBg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 95vh;
+  }
+
+  .ukCustomIcon{
+      width: 70px;
+  }
+
+  .whyChooseBg{
+   
+    background-image: url("../../images/whychooseBg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    position: relative;
+    top:-46px
+  }
+
+  
+  .procImg{
+    position: relative;
+    left:25px;
+  }
+  
+
+
+  
+.negativeTopMarginLargeA {
+  margin-top: -80px;
+}
+
+.negativeTopMarginLargeSpecial{
+  margin-top: -80px;
+}
+
+.negativeTopMarginLargeB {
+  margin-top: -60px;
+}
+
+.negativeTopMarginSmall{
+  position: relative;
+  top: -14px;
+}
+
+
+.negativeTopMarginLargeNew{
+
+  position: relative;
+  top:-100px
+}
+.imgCenter{
+  text-align: center;
+}
+
+
+  .negativeTopMarginSmall{
+    margin-top: 15px;
+  }
+  
+  .withPaddingXLarge{
+    padding-top: 60px;
+    padding-left: 200px;
+    padding-right: 200px; 
+    text-align: center;
+  }
+
+  .imgIconHome{
+      width: 65px;
+  }
+
+  .iconTextDivContainer{
+      position: relative;
+      left:-50px
+  }
+
+  .testimonialBgHome{
+      
+    height: 125vh;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: relative;
+    top:-120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .dirBg{
+      background-image: url(./../../images/connect.png);
+      background-position: cover;
+      background-repeat: no-repeat;
+     
+  }
+
+  .bgTechBlock{
+      
+    background-image: url(./../../images/landing_bg.png);
+    background-size: cover;
+   
+    
+    height: 2100px;
+    
+
+  }
+ 
+  .counterContainer{
+    background-color: #73d56e;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+  }
+
+  .counterNumber{
+    font-size:50px;
+    font-weight: 600;
+    
+  }
+
+  .counterNumber.light{
+    color: #fff;
+
+  }
+
+  .counterText {
+    color:#fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+.leftCTAImgBg{
+  
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../../images/discovery_Bg_small.jpg");
+   background-size: cover;
+    background-position: center;
+   
+  max-height: 500px;
+}
+
+.rightCTAImgBg{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../../images/free_1-1_tutorial_bg.jpg");
+   background-size: cover;
+    background-position: center;
+    
+  max-height: 500px;
+
+}
+
+.scheduleBg{
+  position: relative
+  left;
+}

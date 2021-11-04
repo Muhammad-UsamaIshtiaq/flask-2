@@ -1,0 +1,233 @@
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+  .testimonialBgHome {
+    height: auto;
+    width: 900px;
+    background-color: #fff;
+    box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    position: relative;
+    top: -120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.bgTechBlock {
+  background-image: url(./../../images/landing_bg.png);
+  background-size: cover;
+  height: 123vh;
+}
+
+.headerBg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/headerBg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 700px;
+}
+
+.negativeTopMarginLargeA {
+  margin-top: -20px;
+}
+
+.negativeTopMarginLargeSpecial{
+  margin-top: -90px;
+}
+
+.negativeTopMarginLargeB {
+  margin-top: -20px;
+}
+
+.negativeTopMarginLargeNew {
+  position: relative;
+  top: -104px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+    
+    
+    /* Small tablet to big tablet: from 768px to 1023px */
+    @media only screen and (max-width: 1023px) {
+       .testimonialBgHome {
+        height: auto;
+        width: 700px;
+        background-color: #fff;
+        box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+        position: relative;
+        top: -120px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    
+.headerBg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/headerBg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 700px;
+}
+
+.bgTechBlock {
+  background-image: url(./../../images/landing_bg.png);
+  background-size: cover;
+  height: 194vh;
+}
+
+.negativeTopMarginLargeA {
+  margin-top: 60px;
+}
+
+
+.negativeTopMarginLargeB {
+  margin-top: -20px;
+}
+
+
+.procImg{
+  position: relative;
+  left:-5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+    
+    
+    
+    /* Small phones to small tablets: from 481px to 767px */
+    @media only screen and (max-width: 767px) {
+
+
+   
+      .headerBg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/headerBgSmall.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 700px;
+      }
+
+
+        .bgTechBlock{
+      
+            background-image: url(./../../images/landing_bgSmall.png);
+            background-size: cover;
+           
+            
+            height: auto;
+            padding-bottom: 60px;
+          }
+
+
+
+
+
+          .counterContainer{
+            background-color: #73d56e;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          
+            border-radius: 10px;
+            margin-bottom: 100px;
+            height: auto;
+            padding-bottom: 30px;
+            padding: 10px;
+            
+          }
+
+
+          .testimonialBgHome {
+            height: auto;
+            background-color: #fff;
+            box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+            position: relative;
+            top: -120px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: auto !important;
+        }
+
+        .procImg{
+          position: relative;
+            left: 20%;
+        }
+          
+
+
+
+        .counterText {
+          color: #fff;
+          font-size: 13px;
+          line-height: 19px;
+          font-weight: 500;
+          text-align: center;
+          margin-top: -10px;
+      }
+
+
+
+      .dirBg{
+        background-image: url(./../../images/processBg.jpg);
+        background-position: cover;
+        background-repeat: no-repeat;
+       
+    }
+
+    .negativeTopMarginLargeNew {
+      position: relative;
+      top: 18px;
+  }
+
+
+
+
+    }
+
+
