@@ -144,7 +144,7 @@ class CourseApi(Resource):
         self.parser.add_argument(
             'coverImage', help='[coverImage] field needed', required=True, type=str)
         self.parser.add_argument(
-            'courseImage', help='[courseImage] field needed', required=True, type=str)
+            'courseImage', help='[courseImage] field needed', required=True, type=str)  
         self.getParser = reqparse.RequestParser()
         self.getParser.add_argument(
             'courseType',  action='append', type=str, default=[])
